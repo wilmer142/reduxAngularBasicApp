@@ -30,9 +30,4 @@ export class ChildComponent implements OnInit {
     this.store.dispatch(divide);
   }
 
-  resetGrandChild(newCounter: number){
-    this.counter = newCounter;
-    // this.counterChanges.emit(this.counter);
-  }
-
 }

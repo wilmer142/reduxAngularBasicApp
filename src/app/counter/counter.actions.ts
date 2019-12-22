@@ -4,6 +4,7 @@ export const INCREMENT = '[Counter] Increment';
 export const DECREMENT = '[Counter] Decrement';
 export const MULTIPLY = '[Counter] Multiply';
 export const DIVIDE = '[Counter] Divide';
+export const RESET = '[Counter] Reset';
 
 export class IncrementAction implements Action {
     readonly type = INCREMENT;
@@ -25,8 +26,13 @@ export class DivideAction implements Action {
     constructor(public payload: number) {}
 }
 
+export class ResetAction implements Action {
+    readonly type = RESET;
+}
+
 export type actions = 
     IncrementAction |
     DecrementAction | 
     MultiplyAction |
-    DivideAction;
+    DivideAction |
+    ResetAction;
