@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//NGRX
+import { StoreModule } from "@ngrx/store";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChildComponent } from './counter/child/child.component';
 import { GrandchildComponent } from './counter/grandchild/grandchild.component';
+import { counterReducer } from './counter/counter.reducer';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,8 @@ import { GrandchildComponent } from './counter/grandchild/grandchild.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({ count: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
