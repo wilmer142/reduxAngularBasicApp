@@ -1,11 +1,12 @@
 import { Action } from "@ngrx/store";
+import { INCREMENT, DECREMENT } from './counter.actions';
 
-export function counterReducer( state: number = 10, action: Action ){
+export function counterReducer( state: number = 0, action: Action ){
     switch (action.type) {
-        case 'INCREMENT':
+        case INCREMENT:
             return state + 1;            
 
-        case 'DECREMENT':
+        case DECREMENT:
             return state - 1;            
     
         default:
