@@ -12,12 +12,10 @@ interface AppState {
 })
 export class AppComponent {
 
-  
-
   counter: number;
 
   constructor(private store: Store<AppState>) {
-    this.counter = 10;
+    // this.counterx = 10;
     this.store.subscribe(state => {
       this.counter = state.counter;
     })
@@ -33,6 +31,10 @@ export class AppComponent {
   }
 
   decrement(){
-    this.counter--;
+    // this.counter--;
+    const decrementAction: Action = {
+      type: 'DECREMENT'
+    }
+    this.store.dispatch(decrementAction);
   }
 }
